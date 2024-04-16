@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "clean": "rimraf build/*",
-    "prepare": "npm run compile",
     "compile": "tsc -p .",
-    "postcompile": "copyfiles -f 'build/src/**' build/workspace/ && copyfiles 'node_modules/**' build/workspace/"
+    "copy": "copyfiles -f 'build/src/**' build/workspace/ && copyfiles 'node_modules/**' build/workspace/"
   },
   "devDependencies": {
     "copyfiles": "^2.4.1",

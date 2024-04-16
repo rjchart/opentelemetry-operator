@@ -12,9 +12,16 @@
 FROM node:20 AS build
 
 WORKDIR /operator-build
-COPY . .
+COPY package.json package.json
 
 RUN npm install
+
+COPY . .
+
+RUN npm run compile
+RUN npm run copy
+
+RUN npm install --production
 
 FROM busybox
 
